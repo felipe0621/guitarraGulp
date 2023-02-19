@@ -1,0 +1,71 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.blogs{
+    &__grid{
+        display: grid;        
+        gap: 4rem;
+
+        @include m.tablet { 
+            @include m.grid(2, 4rem);
+        }
+        @include m.desktop { 
+            @include m.grid(4, 4rem);
+        }        
+    }
+    &__grid--pagina{
+        @include m.desktop { 
+            @include m.grid(3, 4rem);
+        }
+    }
+}
+
+.blog{
+    max-width: 80rem;
+    margin: 0 auto;
+
+    &__contenido{
+        padding: 2rem;
+    }
+    &__titulo {
+        text-align: center;
+        font-size: 2.8rem;
+        font-weight: 400;
+        margin: 0;
+        line-height: 1.2;    
+    }
+    &__fecha {
+        font-size: 1.6rem;
+        color: v.$primary;    
+    }  
+    &__texto {
+        font-size: 1.6rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;   //para que deje 4 linea  
+        -webkit-box-orient:vertical; //indica que el contenido va de arriba hacia abajo        
+        overflow: hidden;
+    }
+
+    &__enlace{
+        text-align: center;
+        text-decoration: none;
+        color: v.$negro;
+        text-transform: uppercase;
+        border: 2px solid v.$primary;
+        padding: 1rem 5rem;
+        font-size: 1.4rem;
+        font-weight: 700;
+        margin-top: 2rem;
+        display: block;
+        transition-property: background-color;
+        transition-duration: 1s;
+    }
+    &__enlace:hover {
+        background-color:v.$primary;
+    }   
+    
+}
+
+
+
+

@@ -1,0 +1,31 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.navegacion {
+    display: flex;    
+    gap: 2rem;
+    margin-top: 5rem;
+    position: relative;
+    z-index: 1; /*para que la navegación se coloque encima de la imagen*/
+
+    @media (min-width: 768px) {
+        .navegacion {        
+            margin-top: 0;
+        }
+    } 
+
+    &__enlace{
+        text-decoration: none;
+        color: v.$blanco;
+        font-size: 1.4rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        padding: .5rem;
+        transition-property: background-color;
+        transition-duration: .8s;
+    }
+    &__enlace:hover{
+        background-color: v.$primary;       
+    }
+}
+

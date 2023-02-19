@@ -1,0 +1,55 @@
+@use 'base/variables' as v;
+
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body {
+    font-family: v.$fuentePrincipal;
+    font-size: 2rem;
+    line-height: 1.5;
+}
+
+/*
+.contenedor {
+    width: 95%;
+    margin: 120rem;
+    margin: 0 auto; //para que esté centrado
+}*/
+/*selector de atributo*/
+[class*="contenedor"]{  
+    max-width: 120rem;
+    margin: 0 auto;
+    width: 95%;
+}
+[class*="heading"]{
+    font-size: 4rem;
+    text-align: center;
+    color: v.$primary;
+    font-weight: 900;
+    margin: 5rem 0;
+}
+
+a{
+    text-decoration: none;
+}
+img{
+    max-width: 100%;
+    display: block; //para que tome todo el ancho disponible y no aparezca la linea inferior
+}
+h1,h2,h3 {
+    margin: 0 0 v.$separacion 0;
+}
+h1{
+    font-size: 4rem;
+}
+h2{
+    font-size: 3.6rem;
+}
+h3{
+    font-size: 3.2rem;
+}

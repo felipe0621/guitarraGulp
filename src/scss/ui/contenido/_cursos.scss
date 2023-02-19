@@ -1,0 +1,65 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.cursos  {
+        margin-top: 10rem;
+        padding: 10rem 0;  
+        //background-image: linear-gradient(to right, rgb(0 0 0 / .65), rgb(0 0 0 / .65)),
+        //url(../img/cursos_bg.jpg);        
+        
+        background-size: cover;
+        background-position: center; /*o 50%*/    
+        
+        &__grid{ 
+            @include m.tablet { 
+                @include m.grid(2, 2rem)
+            }
+        }
+            
+        &__contenido{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            @include m.tablet { 
+                grid-column: 2 / 3;
+            }
+        }        
+        
+        &__texto{
+            color: v.$blanco;
+            font-size: 2.4rem;
+            margin-bottom: 4rem;
+            text-align: center;        
+        }
+        &__enlace{
+            text-decoration: none;
+            color: v.$blanco;
+            text-transform: uppercase;
+            border: 2px solid v.$primary;
+            padding: 1rem 5rem;
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-top: 2rem;
+            transition-property: background-color;
+            transition-duration: 1s;
+        }
+        &__enlace:hover{
+            background-color: v.$primary;
+        }    
+
+}
+
+.notavif.notwebp .cursos{
+    background-image: linear-gradient(to right, rgb(0 0 0 / .65), rgb(0 0 0 / .65)),
+        url(../img/cursos_bg.jpg);
+}
+.avif .cursos{
+    background-image: linear-gradient(to right, rgb(0 0 0 / .65), rgb(0 0 0 / .65)),
+        url(../img/cursos_bg.avif);
+}
+.webp .cursos{
+    background-image: linear-gradient(to right, rgb(0 0 0 / .65), rgb(0 0 0 / .65)),
+        url(../img/cursos_bg.webp);
+}
+
